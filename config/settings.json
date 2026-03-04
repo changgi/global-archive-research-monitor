@@ -1,0 +1,223 @@
+{
+  "general": {
+    "default_days_back": 30,
+    "max_results_per_archive": 50,
+    "language": "ko",
+    "output_dir": "./output",
+    "history_file": "./search_history.json",
+    "retry_count": 3,
+    "retry_delay_seconds": 5,
+    "request_delay_seconds": 1
+  },
+  "archives": {
+    "nara": {
+      "enabled": true,
+      "name": "NARA (미국 국립기록관리청)",
+      "flag": "🇺🇸",
+      "base_url": "https://catalog.archives.gov/api/v2",
+      "api_key_env": "NARA_API_KEY",
+      "monthly_limit": 10000,
+      "keywords": [
+        "Korea",
+        "Korean War",
+        "Korean independence",
+        "comfort women Korea",
+        "Korean diplomatic",
+        "Seoul embassy",
+        "USAMGIK",
+        "Korean armistice",
+        "Korean POW",
+        "Syngman Rhee"
+      ],
+      "record_groups": [
+        {
+          "rg": "RG 59",
+          "name": "국무부"
+        },
+        {
+          "rg": "RG 84",
+          "name": "해외공관"
+        },
+        {
+          "rg": "RG 153",
+          "name": "육군 법무감실"
+        },
+        {
+          "rg": "RG 218",
+          "name": "합동참모본부"
+        },
+        {
+          "rg": "RG 263",
+          "name": "CIA"
+        },
+        {
+          "rg": "RG 319",
+          "name": "육군참모부"
+        },
+        {
+          "rg": "RG 338",
+          "name": "미극동군사령부"
+        },
+        {
+          "rg": "RG 332",
+          "name": "USAMGIK"
+        },
+        {
+          "rg": "RG 469",
+          "name": "대외원조기관"
+        },
+        {
+          "rg": "RG 554",
+          "name": "USFK"
+        }
+      ]
+    },
+    "tna": {
+      "enabled": true,
+      "name": "TNA (영국 국립공문서관)",
+      "flag": "🇬🇧",
+      "base_url": "https://discovery.nationalarchives.gov.uk/API",
+      "api_key_env": null,
+      "keywords": [
+        "Korea",
+        "Korean War",
+        "Far East Korea",
+        "Seoul",
+        "Korean armistice"
+      ],
+      "series": [
+        {
+          "ref": "FO 371",
+          "name": "외무부 정치서신"
+        },
+        {
+          "ref": "FO 660",
+          "name": "주한영국대사관"
+        },
+        {
+          "ref": "CO 537",
+          "name": "식민부 기밀서신"
+        },
+        {
+          "ref": "WO 308",
+          "name": "한국전쟁 작전기록"
+        },
+        {
+          "ref": "WO 281",
+          "name": "한국전쟁 전투일지"
+        },
+        {
+          "ref": "DEFE 11",
+          "name": "국방부"
+        },
+        {
+          "ref": "CAB 128",
+          "name": "내각회의록"
+        },
+        {
+          "ref": "PREM 11",
+          "name": "수상실"
+        }
+      ]
+    },
+    "naa": {
+      "enabled": true,
+      "name": "NAA (호주 국립기록관)",
+      "flag": "🇦🇺",
+      "base_url": "https://recordsearch.naa.gov.au",
+      "api_key_env": null,
+      "keywords": [
+        "Korea",
+        "Korean War",
+        "Korean veterans",
+        "BCOF Korea",
+        "3RAR Korea",
+        "Kapyong"
+      ],
+      "series": [
+        {
+          "ref": "A1838",
+          "name": "외교통상부"
+        },
+        {
+          "ref": "A6059",
+          "name": "ASIO"
+        },
+        {
+          "ref": "B883",
+          "name": "한국전 군인기록"
+        }
+      ]
+    },
+    "jacar": {
+      "enabled": true,
+      "name": "JACAR (일본 아시아역사자료센터)",
+      "flag": "🇯🇵",
+      "base_url": "https://www.jacar.go.jp",
+      "api_key_env": null,
+      "keywords": [
+        "朝鮮",
+        "朝鮮総督府",
+        "韓国",
+        "京城",
+        "朝鮮独立",
+        "慰安婦",
+        "朝鮮戦争",
+        "三一運動"
+      ],
+      "collections": [
+        {
+          "code": "B",
+          "name": "외무성 외교사료관"
+        },
+        {
+          "code": "C",
+          "name": "방위성 방위연구소"
+        },
+        {
+          "code": "A",
+          "name": "국립공문서관"
+        }
+      ]
+    },
+    "dpla": {
+      "enabled": true,
+      "name": "DPLA (미국 디지털공공도서관)",
+      "flag": "🇺🇸",
+      "base_url": "https://api.dp.la/v2",
+      "api_key_env": "DPLA_API_KEY",
+      "keywords": [
+        "Korea",
+        "Korean War",
+        "Korean American",
+        "Korean independence",
+        "Korean culture"
+      ]
+    },
+    "europeana": {
+      "enabled": true,
+      "name": "Europeana (유럽 디지털 문화유산)",
+      "flag": "🇪🇺",
+      "base_url": "https://api.europeana.eu/record/v2",
+      "api_key_env": "EUROPEANA_API_KEY",
+      "keywords": [
+        "Korea",
+        "Korean War",
+        "Korean art",
+        "Coree",
+        "Korea Krieg"
+      ]
+    }
+  },
+  "report": {
+    "top_highlights": 5,
+    "include_links": true,
+    "format": "markdown",
+    "save_to_file": true
+  },
+  "schedule": {
+    "enabled": true,
+    "cron": "0 8 * * *",
+    "channel": "telegram"
+  }
+}
