@@ -21,7 +21,7 @@ def load_config(p=None):
 def load_env():
     ep=os.path.join(SD,'..', '.env')
     if os.path.exists(ep):
-        for ln in open(ep):
+        for ln in open(ep, encoding='utf-8'):
             ln=ln.strip()
             if ln and not ln.startswith('#') and '=' in ln:
                 k,_,v=ln.partition('=')
